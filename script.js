@@ -7,6 +7,9 @@ function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
 
   for (const episode of episodeList) {
+    const episodeCard = document.createElement("article");
+    episodeCard.className = "episode";
+
     const title = document.createElement("h2");
     title.textContent = episode.name;
 
@@ -23,10 +26,12 @@ function makePageForEpisodes(episodeList) {
     const summary = document.createElement("p");
     summary.innerHTML = episode.summary;
 
-    rootElem.appendChild(title);
-    rootElem.appendChild(episodeCode);
-    rootElem.appendChild(image);
-    rootElem.appendChild(summary);
+    episodeCard.appendChild(title);
+    episodeCard.appendChild(episodeCode);
+    episodeCard.appendChild(image);
+    episodeCard.appendChild(summary);
+
+    rootElem.appendChild(episodeCard);
   }
 }
 
